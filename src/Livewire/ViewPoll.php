@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Illuminate\Database\Eloquent\Collection;
 
-class Poll extends Component
+class ViewPoll extends Component
 {
 
     protected $listeners = ['pollCreated' => 'render'];

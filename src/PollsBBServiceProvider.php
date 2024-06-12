@@ -36,8 +36,8 @@ class PollsBBServiceProvider extends PackageServiceProvider
     public function boot()
     {
         // Register Livewire components
-       // Livewire::component('poll', \BataBoom\PollsBB\Livewire\Poll::class);
-        //Livewire::component('create-poll', \BataBoom\PollsBB\Livewire\CreatePoll::class);
+        Livewire::component('view-poll', \BataBoom\PollsBB\Livewire\ViewPoll::class);
+        Livewire::component('create-poll', \BataBoom\PollsBB\Livewire\CreatePoll::class);
 
         // Publish views
         $this->loadViewsFrom(__DIR__.'/../resources/views/livewire/pollsbb', 'pollsbb');
