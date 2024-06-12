@@ -65,14 +65,14 @@ class Poll extends Component
             sleep(1);
             $this->results = $this->poll->resultsInPercents();
 
-
-            return view('livewire.pollsbb.voted',[
+            return view('pollsbb::livewire.pollsbb.voted', [
                 'Question' => $this->poll->question,
                 'Votes' => $this->results,
             ]);
 
         } else {
-            return view('livewire.pollsbb.view-poll', [
+
+            return view('pollsbb::livewire.pollsbb.view-poll', [
                 'Question' =>$this->poll->question,
                 'Votes' => $this->votes,
                 'Choices' => $this->poll->choices->toArray(),

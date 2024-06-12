@@ -6,6 +6,7 @@ use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 use BataBoom\PollsBB\Commands\PollsBBCommand;
 use Spatie\LaravelPackageTools\Commands\InstallCommand;
+use Livewire\Livewire;
 
 class PollsBBServiceProvider extends PackageServiceProvider
 {
@@ -30,5 +31,15 @@ class PollsBBServiceProvider extends PackageServiceProvider
                     ->copyAndRegisterServiceProviderInApp()
                     ->askToStarRepoOnGitHub('https://github.com/BataBoom/PollsBB');
             });
+    }
+
+    public function boot()
+    {
+        // Register Livewire components
+        Livewire::component('poll', \BataBoom\PollsBB\Livewire\Poll::class);
+        Livewire::component('create-poll', \BataBoom\PollsBB\Livewire\CreatePoll::class);
+
+        // Publish views
+        $this->loadViewsFrom(__DIR__.'/../resources/views/livewire/pollsbb', 'pollsbb');
     }
 }

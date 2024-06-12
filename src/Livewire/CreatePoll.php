@@ -92,6 +92,6 @@ class CreatePoll extends Component
 
     public function render()
     {
-        return view('livewire.pollsbb.create-poll');
+        return view('pollsbb::livewire.pollsbb.create-poll');
     }
 }
