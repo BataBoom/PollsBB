@@ -28,7 +28,7 @@ class PollsBBServiceProvider extends PackageServiceProvider
                     //->publishAssets()
                     ->publishMigrations()
                     ->copyAndRegisterServiceProviderInApp()
-                    ->askToStarRepoOnGitHub();
+                    ->askToStarRepoOnGitHub('https://github.com/BataBoom/PollsBB');
             });
     }
 }
