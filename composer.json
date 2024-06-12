@@ -37,7 +37,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "BataBoom\\PollsBB\\Tests\\": "tests/",
+            "BataBoom\\PollsBB\\Tests\\": "tests/"
         }
     },
     "scripts": {
