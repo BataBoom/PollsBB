@@ -52,8 +52,19 @@ php artisan vendor:publish --tag="pollsbb-views"
 ## Usage
 
 ```php
-$pollsBB = new BataBoom\PollsBB();
-echo $pollsBB->echoPhrase('Hello, BataBoom!');
+
+<x-app-layout>
+
+<livewire:create-poll />
+@php
+$findPoll = \BataBoom\PollsBB\Models\Poll::all()->first();
+@endphp
+
+<livewire:view-poll :poll="$findPoll" />
+
+</x-app-layout>
+
+after create-poll is created it should auto redirect to view-poll but WIP, upgrading emit/etc from Livewire v2 to v3. 
 ```
 
 ## Testing
