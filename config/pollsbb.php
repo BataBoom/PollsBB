@@ -1,6 +1,7 @@
 <?php
 
 // config for BataBoom/PollsBB
-return [
 
+return [
+    'user_model' => App\Models\User::class,
 ];

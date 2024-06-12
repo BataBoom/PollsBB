@@ -5,6 +5,7 @@ namespace BataBoom\PollsBB;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 use BataBoom\PollsBB\Commands\PollsBBCommand;
+use Spatie\LaravelPackageTools\Commands\InstallCommand;
 
 class PollsBBServiceProvider extends PackageServiceProvider
 {
@@ -20,6 +21,14 @@ class PollsBBServiceProvider extends PackageServiceProvider
             ->hasConfigFile()
             ->hasViews()
             ->hasMigration('create_pollsbb_table')
-            ->hasCommand(PollsBBCommand::class);
+            ->hasCommand(PollsBBCommand::class)
+            ->hasInstallCommand(function(InstallCommand $command) {
+                $command
+                    ->publishConfigFile()
+                    //->publishAssets()
+                    ->publishMigrations()
+                    ->copyAndRegisterServiceProviderInApp()
+                    ->askToStarRepoOnGitHub();
+            });
     }
 }
