@@ -20,7 +20,7 @@ We highly appreciate you sending us a postcard from your hometown, mentioning wh
 You can install the package via composer:
 
 ```bash
-composer require bataboom/pollsbb
+composer require bataboom/pollsbb:dev-main
 ```
 
 You can publish and run the migrations with:
