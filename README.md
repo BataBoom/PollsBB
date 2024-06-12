@@ -40,6 +40,7 @@ This is the contents of the published config file:
 
 ```php
 return [
+    'user_model' => App\Models\User::class,
 ];
 ```
 
